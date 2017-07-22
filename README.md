@@ -37,6 +37,14 @@ Using fastthttp only:
 fasthttp.Serve(listener, nrfasthttp.WrapHandler(newrelicApp, "Request", yourHandler))
 ```
 
+Getting newrelic.Transaction:
+```go
+func handler (ctx *fasthttp.RequestCtx) {
+    txn := ntfasthttp.GetTransaction(ctx)
+}
+```
+
+
 For complete documentation, check [here](https://godoc.org/github.com/greenboxal/nr-fasthttp). The API is based on newrelic/go-agent API so usage is very similiar.
 
 ## License
