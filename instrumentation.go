@@ -38,9 +38,10 @@ func WrapHandler(app newrelic.Application, name string, handler fasthttp.Request
 				default:
 					txn.NoticeError(errWrapper{err})
 				}
+			} else {
+				txn.ResponseSent(NewResponse(&ctx.Response, &ctx.Request))
 			}
 
-			txn.ResponseSent(NewResponse(&ctx.Response, &ctx.Request))
 			txn.End()
 
 			if err != nil {
