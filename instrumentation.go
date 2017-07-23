@@ -59,7 +59,7 @@ func StartExternalSegment(txn newrelic.Transaction, req *fasthttp.Request) newre
 	return newrelic.StartExternalSegment(txn, Request{req})
 }
 
-func Do(client *fasthttp.HostClient, txn newrelic.Transaction, req *fasthttp.Request, res *fasthttp.Response) error {
+func Do(client Client, txn newrelic.Transaction, req *fasthttp.Request, res *fasthttp.Response) error {
 	seg := StartExternalSegment(txn, req)
 	defer seg.End()
 
@@ -69,7 +69,7 @@ func Do(client *fasthttp.HostClient, txn newrelic.Transaction, req *fasthttp.Req
 	return err
 }
 
-func DoTimeout(client *fasthttp.HostClient, txn newrelic.Transaction, req *fasthttp.Request, res *fasthttp.Response, timeout time.Duration) error {
+func DoTimeout(client Client, txn newrelic.Transaction, req *fasthttp.Request, res *fasthttp.Response, timeout time.Duration) error {
 	seg := StartExternalSegment(txn, req)
 	defer seg.End()
 
@@ -79,7 +79,7 @@ func DoTimeout(client *fasthttp.HostClient, txn newrelic.Transaction, req *fasth
 	return err
 }
 
-func DoDeadline(client *fasthttp.HostClient, txn newrelic.Transaction, req *fasthttp.Request, res *fasthttp.Response, deadline time.Time) error {
+func DoDeadline(client Client, txn newrelic.Transaction, req *fasthttp.Request, res *fasthttp.Response, deadline time.Time) error {
 	seg := StartExternalSegment(txn, req)
 	defer seg.End()
 
