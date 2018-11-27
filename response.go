@@ -2,7 +2,7 @@ package nrfasthttp
 
 import (
 	"github.com/newrelic/go-agent/http"
-	"github.com/valyala/fasthttp"
+	fasthttp "gopkg.in/valyala/fasthttp.v20160316"
 )
 
 type Response struct {

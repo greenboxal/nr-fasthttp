@@ -1,6 +1,6 @@
 package nrfasthttp
 
-import "github.com/valyala/fasthttp"
+import fasthttp "gopkg.in/valyala/fasthttp.v20160316"
 
 type ResponseHeader struct {
 	*fasthttp.ResponseHeader

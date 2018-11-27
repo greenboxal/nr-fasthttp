@@ -4,7 +4,7 @@ import (
 	"net/url"
 
 	"github.com/newrelic/go-agent/http"
-	"github.com/valyala/fasthttp"
+	fasthttp "gopkg.in/valyala/fasthttp.v20160316"
 )
 
 type Request struct {

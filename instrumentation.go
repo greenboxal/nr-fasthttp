@@ -4,7 +4,7 @@ import (
 	"time"
 
 	"github.com/newrelic/go-agent"
-	"github.com/valyala/fasthttp"
+	fasthttp "gopkg.in/valyala/fasthttp.v20160316"
 )
 
 // UserValue name used to store newrelic.Transaction on fasthttp.RequestCtx
